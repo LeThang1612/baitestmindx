@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Number One Triangle</title>
+</head>
+<body>
+	<h1>Number One Triangle</h1>
+	<p>Nhập số trong khoảng từ 1 đến 10 để xem hình tam giác:</p>
+	<form>
+		<input type="number" id="inputNum" name="inputNum" min="1" max="10">
+		<button type="button" onclick="displayTriangle()">Hiển thị</button>
+	</form>
+	<div id="triangle"></div>
+
+	<script>
+		function displayTriangle() {
+			const num = document.getElementById("inputNum").value;
+			const triangleDiv = document.getElementById("triangle");
+			triangleDiv.innerHTML = "";
+
+			if (num < 1 || num > 10) {
+				triangleDiv.innerHTML = "Số không hợp lệ!";
+			} else {
+				for (let i = 1; i <= num; i++) {
+					for (let j = 1; j <= i; j++) {
+						triangleDiv.innerHTML += "1 ";
+					}
+					triangleDiv.innerHTML += "<br>";
+				}
+			}
+		}
+	</script>
+</body>
+</html>
